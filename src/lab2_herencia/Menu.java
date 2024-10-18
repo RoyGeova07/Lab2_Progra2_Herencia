@@ -16,6 +16,7 @@ import java.awt.event.*;
  */
 public class Menu extends JFrame {
 
+
     private Tigo tigo;
     
     public Menu(){
@@ -221,3 +222,7 @@ public class Menu extends JFrame {
     }
     
 }
+=======
+    
+}
+>>>>>>> 7e421b5284332a4ec827320922702ede5caa7e2c
