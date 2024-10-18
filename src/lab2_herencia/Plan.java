@@ -6,12 +6,13 @@ package lab2_herencia;
 
 import javax.swing.JOptionPane;
 
+// trabjo Roy
 /**
  *
  * @author royum
  */
 public abstract class Plan {
-    
+
     protected int NumeroTelefono;
     protected String Nombre;
 
@@ -27,16 +28,13 @@ public abstract class Plan {
     public String getNombre() {
         return Nombre;
     }
-    
+
     public abstract double pagoMensual(int mins, int msgs);
-    
-   
 
     public String Imprimir() {
-        
-        return "Numero Telefono: "+NumeroTelefono+ " Nombre: "+Nombre;
-        
+
+        return "Numero Telefono: " + NumeroTelefono + " Nombre: " + Nombre;
+
     }
-    
-    
+
 }

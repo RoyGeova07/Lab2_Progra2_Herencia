@@ -8,12 +8,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+// TRABAJO ROY
+
 /**
  *
  * @author royum
  */
 public class Menu extends JFrame {
-    
+
     private Tigo tigo;
     
     public Menu(){
@@ -112,16 +114,38 @@ public class Menu extends JFrame {
         try {
             int numeroTel = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el numero de telfono:"));
             String nombre = JOptionPane.showInputDialog(this, "Ingrese el nombre del cliente:");
+            if(nombre.isEmpty()){
+                
+                JOptionPane.showMessageDialog(null, "no podes dejar esto vacio");
+                return;
+                
+            }
             String tipo = JOptionPane.showInputDialog(this, "Ingrese el tipo de plan (IPHONE/SAMSUNG):").toUpperCase();
             
+            if(tipo.isEmpty()){
+                
+                JOptionPane.showMessageDialog(null, "no podes dejar esto en blanco");
+                return;
+                
+            }
+            
+            
+            
             if (!tipo.equals("IPHONE") && !tipo.equals("SAMSUNG")) {
-                JOptionPane.showMessageDialog(this, "Tipo de plan no válido.");
+                JOptionPane.showMessageDialog(this, "Tipo de plan no valido.");
                 return;
             }
 
             String extra = tipo.equals("IPHONE")
                     ? JOptionPane.showInputDialog(this, "Ingrese el email de iTunes:")
                     : JOptionPane.showInputDialog(this, "Ingrese el PIN de Samsung:");
+            
+            if(extra.isEmpty()){
+                
+                JOptionPane.showMessageDialog(null, "no podes dejar esto en blanco");
+                return;
+                
+            }
 
             if (!tigo.busqueda(numeroTel, extra, tipo)) {
                 tigo.AgregarPlan(numeroTel, nombre, extra, tipo);
@@ -158,7 +182,6 @@ public class Menu extends JFrame {
             String pin = JOptionPane.showInputDialog(this, "Ingrese el PIN del amigo:");
 
             tigo.agregarAmigo(numeroTel, pin);
-            JOptionPane.showMessageDialog(this, "Amigo agregado correctamente.");
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Por favor ingrese un numero valido.");
         }
@@ -196,4 +219,5 @@ public class Menu extends JFrame {
             }
         });
     }
+    
 }

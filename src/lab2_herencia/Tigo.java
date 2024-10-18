@@ -5,6 +5,9 @@
 package lab2_herencia;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+// trabajo ERNESTO
 
 /**
  *
@@ -65,6 +68,7 @@ public class Tigo {
                 if (plan instanceof PlanSamsung) {
                     PlanSamsung samsungPlan = (PlanSamsung) plan;
                     samsungPlan.AgregarAmigo(pin);
+                    JOptionPane.showMessageDialog(null, "Amigo agregado exitosamente");
                     return;
                 } else {
                     System.out.println("El plan no es de tipo Samsung.");
@@ -72,7 +76,7 @@ public class Tigo {
                 }
             }
         }
-        System.out.println("Número de teléfono no encontrado.");
+        JOptionPane.showMessageDialog(null, "Amigo no encontrado");
     }
 
     public void lista() {

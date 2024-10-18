@@ -4,35 +4,34 @@
  */
 package lab2_herencia;
 
+// trabajo ERNESTO
 /**
  *
  * @author royum
  */
 public class PlanIphone extends Plan {
-    
+
     protected String emailitunes;
-    
-    public PlanIphone(int NumeroTelefono, String Nombre, String emailitunes){
+
+    public PlanIphone(int NumeroTelefono, String Nombre, String emailitunes) {
         super(NumeroTelefono, Nombre);
-        this.emailitunes=emailitunes;
+        this.emailitunes = emailitunes;
     }
-    
-    public String getemailitunes(){
+
+    public String getemailitunes() {
         return emailitunes;
     }
-    
+
     @Override
     public double pagoMensual(int mins, int msgs) {
-        return 22+(mins*0.4)+(msgs*0.1);
+        return 22 + (mins * 0.4) + (msgs * 0.1);
     }
-    
-    @Override
-    public String Imprimir(){
-        
-        return super.Imprimir()+ "Email iTunes: "+emailitunes;
-        
-    }
-    
 
-    
+    @Override
+    public String Imprimir() {
+
+        return super.Imprimir() + "Email iTunes: " + emailitunes;
+
+    }
+
 }
